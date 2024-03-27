@@ -81,7 +81,7 @@ public class JavaQuest3 {
       case 12:
         MonthOfName = "December";
         numberOfDaysInMonth = 31;
-
+        break;
       default:
         break;
     }
