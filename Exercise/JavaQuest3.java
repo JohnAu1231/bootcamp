@@ -82,8 +82,7 @@ public class JavaQuest3 {
         MonthOfName = "December";
         numberOfDaysInMonth = 31;
         break;
-      default:
-        break;
+
     }
     // if (month == 2 && (year % 4 == 0 && year % 100 > 0 || year % 400 == 0)) {
     // numberOfDaysInMonth = 29;
