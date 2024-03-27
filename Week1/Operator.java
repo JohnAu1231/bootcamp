@@ -22,10 +22,10 @@ public class Operator{
 
     //predecrement = value change first, then variable get the value
     int predecrement = --e; //5 , e-1 first,so predecrement = 5
-    System.out.println(predecrement); //5 拎完VALUE先運算
+    System.out.println(predecrement); //5 運算完先拎VALUE
     //postdecrement = variable get the value first, then value change
     int postdecrement = e--; //postdecrement = 5; postdecrement get the e value first, so = 5, then e -1
-    System.out.println(postdecrement); //5 運算完先拎VALUE
+    System.out.println(postdecrement); //5 拎完VALUE先運算
     System.out.println(e); //4, e-1 in "int postdecrement = e--;" after postdecrement get the value 5
 
     int f = 20;
