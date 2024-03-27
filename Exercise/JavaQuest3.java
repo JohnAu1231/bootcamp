@@ -81,12 +81,13 @@ public class JavaQuest3 {
       case 12:
         MonthOfName = "December";
         numberOfDaysInMonth = 31;
+
       default:
         break;
     }
-        // if (month == 2 && (year % 4 == 0 && year % 100 > 0 || year % 400 == 0)) {
-        //   numberOfDaysInMonth = 29;
-        // }
+    // if (month == 2 && (year % 4 == 0 && year % 100 > 0 || year % 400 == 0)) {
+    // numberOfDaysInMonth = 29;
+    // }
     System.out.print(
         MonthOfName + " " + year + " has " + numberOfDaysInMonth + " days\n");
   }
