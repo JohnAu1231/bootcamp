@@ -1,7 +1,7 @@
 import javax.net.ssl.TrustManager;
 import javax.swing.plaf.TreeUI;
 
-public class App {
+public class DemoIf {
     public static void main(String[] args) throws Exception {
         int x = 4;
         if (x > 3) {
@@ -69,14 +69,14 @@ public class App {
         // example: "Monday".equals(daytype)
         // 2. String variable compares wtih String variable
 
-        //Example 3
+        // Example 3
         int score = 90;
         char grade = ' ';
-        //score > 90 = A
-        //80 - 90 = B
-        //70 - 79 = C
+        // score > 90 = A
+        // 80 - 90 = B
+        // 70 - 79 = C
         // < 70 = F
-        //Print out: "The grade is B and passed."
+        // Print out: "The grade is B and passed."
         grade = 'F';
         String pass = "failed";
         if (score > 90) {
@@ -93,7 +93,7 @@ public class App {
         // example 3 writing faster
         if (score > 90) {
             grade = 'A';
-        } else if (score >= 80) { //not need <=90 because it already compare the score>90 before
+        } else if (score >= 80) { // not need <=90 because it already compare the score>90 before
             grade = 'B';
         } else if (score >= 70) {
             grade = 'C';
@@ -101,5 +101,82 @@ public class App {
         if (grade == 'A' || grade == 'B' || grade == 'C')
             pass = "passed";
         System.out.println("The grade is " + grade + " and " + pass);
+
+        // Sting with if
+        String s1 = "hello";
+        // check if the length of s1 > 5
+        if (s1.length() > 5) {
+            System.out.println("The length of s1 > 5");
+        } else {
+            System.out.println("The length of s1 <= 5");
+        }
+
+        // Another approach:
+        if (!(s1.length() <= 5)) {
+            System.out.println("The length of s1 >5");
+        }
+
+        // char (==, >=, <=, >, <, !=)
+        char gender = 'F';
+        if (gender == 'M') {
+            System.out.println("Gender is " + gender);
+        } else if(gender == 'F') {
+            System.out.println("Gender is not M");
+        }
+
+        if (gender != 'M') {
+            System.out.println("Gender is not M");
+        }
+
+        // int, long, short, byte, float, double (==, >=, <=, >, <, !=)
+        double u = 10.4;
+        if (u >10) {//10 -> double: 10.4 -> 10.0
+            System.out.println("u > 10");
+        }
+        // boolean (==, !=)
+        int v = 4;
+        boolean b1 = v >10; //false
+        boolean c1 = v < 20;
+        if (b1 == true) {
+
+        } 
+        if (b1 == false){
+
+        }
+        if (!(b1 == true && c1 == true)) { 
+            //That means if clause ture when all other scenario 
+            //1. b1 == true && c1 == false
+            //2. b1 == false && c1 == true
+            //3. b1 == false && c1 == false
+
+        }
+
+        // String.charAt(int index) -> return char
+        String s2 = "abcdefg";
+        // Check if s2 start with 'a' and end with 'g', print out "yes", otherwise "no"
+        int s2EndIndex = s2.length() - 1; // length -1 = end char index
+        System.out.println(s2EndIndex); // check length index
+        System.out.println(s2.charAt(0)); //a
+        System.out.println(s2.charAt(s2.length() - 1)); //g or end char
+
+        if (s2.charAt(0) == 'a' && s2.charAt(s2.length() - 1) == 'g') {
+            System.out.println("Yes");
+        } else { 
+            System.out.println("No");
+        }
+
+        System.out.println(true && false); //false
+        System.out.println(false && true);//false (the true is dead code, because the first condtion always true)
+        System.out.println(true && true);//true
+        System.out.println(false && false);//false
+
+        System.out.println(true || true); //true
+        System.out.println(true || false); //true
+        System.out.println(false || false); //false
+        System.out.println(false || true); //true
+        
+        
+
+
     }
 }
