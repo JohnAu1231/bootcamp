@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class array {
     public static void main(String[] args) {
         int[] arr = new int[4];
@@ -107,26 +109,74 @@ public class array {
         System.out.println("The average of even number is " + avgEven);    
         
         // find max
-        int max = 1000;
+        int max = Integer.MIN_VALUE; // the min.value of int
         for (int i = 0; i < integers2.length; i++) {
-            if (i == 0) {
-                max = integers2[i];
-            }
             if (integers2[i] > max) {
                 max = integers2[i];
             }
         }
         System.out.println(max);
-        // fin min
-        int min = -1;
+        // find min
+        int min = Integer.MAX_VALUE;
         for (int i = 0; i < integers2.length; i++) {
-            if (i == 0) {
-                min = integers2[i];
-            }
             if (integers2[i] < min) {
                 min = integers2[i];
             }
         }
         System.out.println(min);
+
+    //Searching
+    char[] characters = new char[] {'a', 'b', 'e', 'k', 'f', 'o'};
+    //check if the array contains char '!' -> true/false
+    boolean result = false;
+    for (int i = 0; i < characters.length; i++) {
+        if (characters[i] == '!') {
+            result = true;
+            break;
+        }
+    }
+    System.out.println(result);
+    
+    //print out index of '!', if not found, print -1.
+    int indexT = -1;
+    int count = 0;
+    for (int i = 0 ; i < characters.length; i++) {
+        if (characters[i] == '!') {
+            indexT = i;
+            break;
+
+        }
+    }
+        System.out.println(-1);
+    
+
+    // store all index of '!' in an other array
+    char[] characters2 = new char[] {'a', 'b', '!', 'e', '!'};
+    int[] indexes = new int[characters2.length];
+    int countI = 0;
+    for (int i = 0; i < characters2.length; i++) {
+        if (characters2[i] == '!') {
+            indexes[countI++] = i;
+        }
+    }
+
+    System.out.println(Arrays.toString(indexes)); //[2,4,0,0,0]
+    
+    // 
+    String[] balls = new String[] {"RED", "YELLOW", "BLACK", "YELLOW"};
+    double[] prices = new double[] {5.5, 7.8, 10.0, 7.8};
+    int[] quantities = new int[] {1,3,4,5};
+    //Yellow balls (price * quantity)
+    double totalPrice = 0;
+    for (int i = 0; i < balls.length; i++) {
+        if ("YELLOW".equals(balls[i])) {
+           totalPrice +=( prices[i] * quantities[i] ); // double*int ->double
+        }
+    }
+    System.out.println(totalPrice); //62.4
+
+
+
+
     }
 }
