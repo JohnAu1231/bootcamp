@@ -30,6 +30,8 @@ public class String1 {
     String s1 = "hello";
     String s2 = "hello";
 
+    //equalsIgnoreCase  
+
     boolean isS1EqualsToS2 = s1.equals(s2); // true
     System.out.println(isS1EqualsToS2);
 
