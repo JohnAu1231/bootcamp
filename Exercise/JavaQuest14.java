@@ -38,6 +38,36 @@ public class JavaQuest14 {
   // Code a method here to return true if the integer is palindrome, otherwise
   // false
   public static boolean palindrome(int num) {
+    // skip negative number
+    if (num >= 0) {
+      int count = 0;
+      int y = num;
+      // define array length
+      while (y > 0) {
+        y /= 10;
+        count++;
+      }
+      // put each number into array
+      int z = num;
+      int[] numArray = new int[count];
+      for (int i = count - 1; i >= 0; i--) {
+        numArray[i] = z % 10;
+        z /= 10;
+      }
+      // compare the number
+      int countEnd = count / 2;
+      for (int i = 0; i < count / 2; i++) {
+        if (numArray[i] == numArray[count - i - 1]) {
+          countEnd--;
+        } else {
+          break;
+        }
+      }
+      // define the true case
+      if (countEnd == 0) {
+        return true;
+      }
+    }
     return false;
   }
 }
