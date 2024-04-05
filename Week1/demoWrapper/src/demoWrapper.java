@@ -63,7 +63,7 @@ public class demoWrapper {
         System.out.println(num3.equals(num4)); // true
 
         // valueOf() will check and use the integer object if it is default created in java
-        //-128 to 127 , java default not need to create a new object, default create in hemp
+        //-128 to 127 , java default not need to create a new object, default created in hemp
         // this 256 oject already created in java
 
         //.complareTo()
@@ -103,6 +103,12 @@ public class demoWrapper {
         int i5 = 12;
         //Long l5 = i5; //error// int -> long (upcast) -> Long (autobox) // Because Java cannot does two step together
 
+        Boolean t1 = new Boolean("true");
+        Boolean t2 = new Boolean("true");
+        Boolean t3 = true;
+        System.out.println("test----");
+        System.out.println(t1 == t2);
+        System.out.println(t3 == t2);
 
 
 

@@ -92,30 +92,30 @@ public class LoopTest {
       }
     }
 
-    n = 10;
-    // for fun
-    for (int k = 0; k < 10; k++) {
-      for (int i = 0; i < n; i++) {
-        for (int j = i; j < n - 1; j++) {
-          System.out.print("-");
-        }
-        System.out.print("*");
-        for (int j = n - i; j < n; j++) {
-          System.out.print("-");
-        }
-        System.out.println("");
-      }
-      for (int i = 0; i < n - 2; i++) {
-        for (int j = n - i - 1; j < n; j++) {
-          System.out.print("-");
-        }
-        System.out.print("*");
-        for (int j = i; j < n - 2; j++) {
-          System.out.print("-");
-        }
-        System.out.println("");
-      }
-    }
+    // n = 10;
+    // // for fun
+    // for (int k = 0; k < 10; k++) {
+    //   for (int i = 0; i < n; i++) {
+    //     for (int j = i; j < n - 1; j++) {
+    //       System.out.print("-");
+    //     }
+    //     System.out.print("*");
+    //     for (int j = n - i; j < n; j++) {
+    //       System.out.print("-");
+    //     }
+    //     System.out.println("");
+    //   }
+    //   for (int i = 0; i < n - 2; i++) {
+    //     for (int j = n - i - 1; j < n; j++) {
+    //       System.out.print("-");
+    //     }
+    //     System.out.print("*");
+    //     for (int j = i; j < n - 2; j++) {
+    //       System.out.print("-");
+    //     }
+    //     System.out.println("");
+    //   }
+    // }
 
 
 

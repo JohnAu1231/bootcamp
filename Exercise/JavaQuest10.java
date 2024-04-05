@@ -30,6 +30,7 @@ public class JavaQuest10 {
     for (int i = newArr.length - 1; i > indexPosition; i--) {
       newArr[i] = newArr[i - 1];
     }
+    
     if (indexPosition != newArr.length - 1) {
       newArr[indexPosition] = newValue;
     }
