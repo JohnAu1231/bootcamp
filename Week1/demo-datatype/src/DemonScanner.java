@@ -5,6 +5,7 @@ public class DemonScanner{
     Scanner s  = new Scanner(System.in);//
     System.out.println("Please input a number:");
     int input = s.nextInt();//
+    
 
     System.out.println("input=" + input);
   }
