@@ -4,6 +4,12 @@ public class Person {
 
   private double salary;
 
+  //constructor
+  public Person () {}
+  public Person(int age) {
+    this.age = age;
+  }
+
   public void setAge(int age) {
     this.age = age;
   }
@@ -49,6 +55,12 @@ public class Person {
     System.out.println(person2.isElderly()); //false    
     System.out.println(person2.isJoyYou());   
     System.out.println(person2.toString());  
+
+    Person person3 = new Person(3);
+    System.out.println(person3.getAge());
+    System.out.println(new Person(68).isElderly());
+    
+
 
   }
 }

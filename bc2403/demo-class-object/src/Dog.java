@@ -17,6 +17,8 @@ public class Dog {
     // dog2.setAge(4); // NPE: null pointer exception
     Dog dog3 = new Dog();
     dog3.setAge(15);
+    Dog dog4 = new Dog("Alex", "Yeung", 25);
+    System.out.println(dog4.toString());
     /*
      * dog3 point dog object -> 
      * dog object has setAge method -> 
@@ -28,6 +30,17 @@ public class Dog {
   private String firstName;
   private String lastName;
   private int age;
+
+  public Dog() {
+
+  }
+
+  // All argument
+  public Dog(String firstName, String lastName, int age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+  }
 
   public void setFirstName(String firstName) {
     this.firstName = firstName;
