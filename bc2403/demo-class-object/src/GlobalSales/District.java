@@ -17,8 +17,9 @@ public class District {
   public double districtSale() {
     BigDecimal sum = BigDecimal.valueOf(0);
     for (int i = 0; i < this.shops.length; i++) {
-      sum = sum.add(BigDecimal.valueOf(this.shops[i].shopSale()))
+      sum = sum.add(BigDecimal.valueOf(this.shops[i].shopSale()));
     }
+    return sum.doubleValue();
   }
 
   public void addShop(Shop shop) {
@@ -58,6 +59,7 @@ public class District {
     hk.addShop(shop1);
     hk.addShop(shop2);
     System.out.println(hk.toString());
+    System.out.println(hk.districtSale());
 
 
   }
