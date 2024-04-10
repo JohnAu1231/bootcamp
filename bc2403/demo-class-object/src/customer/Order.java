@@ -1,5 +1,6 @@
 package customer;
 
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class Order {
@@ -25,11 +26,11 @@ public class Order {
   }
 
   public double total() {
-    double sum = 0;
+    BigDecimal sum = BigDecimal.valueOf(0.0d);
     for(int i = 0; i < this.items.length; i++) {
-      sum += items[i].subTotal();
+      sum = sum.add(BigDecimal.valueOf(items[i].subTotal()));
     }
-    return sum;
+    return sum.doubleValue();
   }
 
 
