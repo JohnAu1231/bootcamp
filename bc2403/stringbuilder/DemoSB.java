@@ -59,9 +59,12 @@ public class DemoSB {
       System.out.println("they are equal");
     }
 
-    sb5.setLength(100);
+    // sb5.setLength(100);
     System.out.println(sb5.toString());
     sb5.append("zzz");
     System.out.println(sb5.toString());
+    sb5.delete(0,5);
+    System.out.println(sb5.toString());
+
   }
 }

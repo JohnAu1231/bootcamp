@@ -19,22 +19,36 @@ public class JavaQuest20 {
     System.out.println(rotateString("abcde", "abcde"));// true
   }
 
-  public static boolean rotateString(String s, String goal) {
+  // public static boolean rotateString(String s, String goal) {
     // code here ...
 
+  //   for (int j = 0; j < goal.length(); j++) {
+  //     char[] target = new char[goal.length()];
+  //     char temp = goal.charAt(0);
+  //     for (int i = 0; i < goal.length() - 1; i++) {
+  //       target[i] = goal.charAt(i + 1);
+  //     }
+  //     target[goal.length() - 1] = temp;
+  //     String ans = "";
+  //     for (int i = 0; i < goal.length(); i++) {
+  //       ans = ans.concat(String.valueOf(target[i]));
+  //     }
+  //     goal = ans;
+  //     if (s.equals(goal)) {
+  //       return true;
+  //     }
+  //   }
+  //   return false;
+  // }
+
+  public static boolean rotateString(String s, String goal) {
+    // code here ...
+    StringBuilder newS = new StringBuilder(goal);
     for (int j = 0; j < goal.length(); j++) {
-      char[] target = new char[goal.length()];
-      char temp = goal.charAt(0);
-      for (int i = 0; i < goal.length() - 1; i++) {
-        target[i] = goal.charAt(i + 1);
-      }
-      target[goal.length() - 1] = temp;
-      String ans = "";
-      for (int i = 0; i < goal.length(); i++) {
-        ans = ans.concat(String.valueOf(target[i]));
-      }
-      goal = ans;
-      if (s.equals(goal)) {
+      char temp = newS.charAt(0);
+      newS.deleteCharAt(0);
+      newS.insert(newS.length(), temp);
+      if ((newS.toString()).equals(s)) {
         return true;
       }
     }

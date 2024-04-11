@@ -21,7 +21,7 @@ public class Test {
     Test t = new Test(3);
     System.out.println(t.sum(1,100)); // 104
     System.out.println(Test.sum2(1,100)); //101
-
+    System.out.println(Staff.getAgeLimit());
 
 
   }
