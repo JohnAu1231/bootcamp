@@ -35,6 +35,7 @@ public class Student {
   }
 
   public String toString() {
+    System.out.println("instane method");
     return this.name;
   }
 
@@ -46,6 +47,8 @@ public class Student {
     System.out.println(s.toString());
     Student s2 = new Student("joe");
     System.out.println(s2.toString());
+    System.out.println(s2.toString());
+    Student s3 = new Student("joe");
     System.out.println("abc=" + abc);
 
     System.out.println("main end");

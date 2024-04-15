@@ -2,40 +2,138 @@ package poker;
 
 public class Card {
 
-  public static final char DIAMOND = 'D';
-
-  public static final char HEART = 'H';
-
-  public static final char SPADES = 'S';
-
-  public static final char CLUBS = 'C';
-
-  public static final int ONE = 1;
+  // when no enum, using static final
+  // public static final char DIAMOND = 'D';
+  // public static final char HEART = 'H';
+  // public static final char SPADE = 'S';
+  // public static final char CLUB = 'C';
+  // public static final int ONE = 1;
+  // public static final int TWO = 2;
+  // public static final int THREE = 3;
+  // public static final int FOUR = 4;
+  // public static final int FIVE = 5;
+  // public static final int SIX = 6;
+  // public static final int SEVEN = 7;
+  // public static final int EIGHT = 8;
+  // public static final int NINE = 9;
+  // public static final int TEN = 10;
+  // public static final int ELEVEN = 11;
+  // public static final int TWLVE = 12;
+  // public static final int Rank.THIRTEEN = 13;
   // instance variable
-  private char suit;
+  private Suit suit;
 
-  private int rank;
+  private Rank rank;
 
   // constructor
-  public Card(int rank, char suit) {
+  public Card(Rank rank, Suit suit) {
     this.rank = rank;
     this.suit = suit;
   }
 
-  public void setCard(int rank, char suit) {
+  public void setCard(Rank rank, Suit suit) {
     this.rank = rank;
     this.suit = suit;
   }
+
+  public void setRank (Rank rank) {
+    this.rank = rank;
+  }
+
+  public void setSuit (Suit suit) {
+    this.suit = suit;
+  }
+
+  public Rank getRank() {
+    return this.rank;
+  }
+
+  public Suit getSuit() {
+    return this.suit;
+  }
+
+  public int suitCompareTo(Card card) {
+    int thisC = 0;
+    int compareC = 0;
+    if (this.suit == Suit.SPADE) {
+      thisC = 4;
+    }
+    if (this.suit == Suit.HEART) {
+      thisC = 3;
+    }
+    if (this.suit == Suit.CLUB) {
+      thisC = 2;
+    }
+    if (this.suit == Suit.DIAMOND) {
+      thisC = 1;
+    }
+    if (card.getSuit() == Suit.SPADE) {
+      compareC = 4;
+    }
+    if (card.getSuit() == Suit.HEART) {
+      compareC = 3;
+    }
+    if (card.getSuit() == Suit.CLUB) {
+      compareC = 2;
+    }
+    if (card.getSuit() == Suit.DIAMOND) {
+      compareC = 1;
+    }
+    if (thisC > compareC) {
+      return 1;
+    } else if (thisC < compareC) {
+      return -1;
+    }
+    return 0;
+  }
+
+  public int compareTo(Card card) {
+    if (this.rank.getRankValue() > card.rank.getRankValue()) {
+      return 1;
+    } else if (this.rank.getRankValue() < card.rank.getRankValue()) {
+      return -1;
+    } 
+    return this.suitCompareTo(card);
+  }
+
 
   public String toString() {
     return "Card(" //
-    + "rank=" + this.rank //
-    + ", suit=" + this.suit //
-    + ")";
-  }
-  public static void main(String[] args) {
-    Card sss = new Card()
+        + "rank=" + this.rank //
+        + ", suit=" + this.suit //
+        + ")";
   }
 
+  public static void main(String[] args) {
+    System.out.println("hello");
+    Card hello = new Card(Rank.ONE, Suit.DIAMOND);
+    Card world = new Card(Rank.TWO, Suit.SPADE);
+    // System.out.println(hello.getRank());
+    // System.out.println(world.getRank());
+    // System.out.println(world.getSuit());
+    // System.out.println(world.compareTo(hello));
+    // System.out.println(Rule.compareTo(world,hello));
+    // System.out.println(Rule.compareTo(hello,world));
+    Card[] card1 = new Card[] {new Card(Rank.THIRTEEN, Suit.SPADE),new Card(Rank.TWO, Suit.SPADE), new Card(Rank.TWO, Suit.SPADE), new Card(Rank.TWO, Suit.SPADE),new Card(Rank.ONE, Suit.SPADE)};
+    Card c1 =  new Card(Rank.THIRTEEN, Suit.SPADE);
+    Card c2 =  new Card(Rank.TWLVE, Suit.SPADE);
+    Card c3 =  new Card(Rank.ELEVEN, Suit.SPADE);
+    Card c4 =  new Card(Rank.TEN, Suit.DIAMOND);
+    Card c5 =  new Card(Rank.NINE, Suit.SPADE);
+    Hand myHand = new Hand(new Card(Rank.THIRTEEN, Suit.SPADE),new Card(Rank.TWO, Suit.SPADE), new Card(Rank.TWO, Suit.SPADE), new Card(Rank.TWO, Suit.SPADE),new Card(Rank.TWO, Suit.SPADE));
+    Hand myHand2 = new Hand(new Card(Rank.SIX, Suit.SPADE),new Card(Rank.FIVE, Suit.SPADE), new Card(Rank.FOUR, Suit.SPADE), new Card(Rank.THREE, Suit.SPADE),new Card(Rank.TWO, Suit.SPADE));
+    Hand myHand3 = new Hand(c1,c3,c5,c2,c4);
+    System.out.println(myHand.isFourKind());
+    System.out.println(myHand.isThreeHouse());
+    System.out.println(myHand2.isFlush());
+    System.out.println(myHand2.isStraight());
+    System.out.println(myHand3.isStraight());
+    System.out.println(myHand2.isStraightFlush());
+    System.out.println(myHand3.isStraightFlush());
+    
+    
   
+  }
+
+
 }
