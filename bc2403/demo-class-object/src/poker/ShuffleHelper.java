@@ -1,14 +1,20 @@
 package poker;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class ShuffleHelper {
 
+  
+  private Card[] cards;
+
   public ShuffleHelper(Deck deck) {
     this.cards = deck.getCards();
   }
-  
-  private Card[] cards;
+
+  public Card[] getCards() {
+    return this.cards;
+  }
 
   public void riffle() {
     Card[] arr1 = new Card[this.cards.length/2];
@@ -36,20 +42,13 @@ public class ShuffleHelper {
 
     public void shuffle() {
 
-    Card[] arr = this.cards;
-    int count = 52;
     for (int i = 0; i < cards.length; i++) {
       int idx = new Random().nextInt(52 - i);
-      this.cards[count - 1] = arr[idx];
-      for (int j = idx + 1; j < count; j++) {
-        if (j == count - 1) {
-          break;
-        }
-        Card temp = arr[j];
-        arr[j] = arr[j + 1];
-        arr[j + 1] = temp;
+      if(this.cards[i] != this.cards[idx]) {
+        Card temp = this.cards[i];
+        this.cards[i] = this.cards[idx];
+        this.cards[idx] = temp; 
       }
-      count--;
     }
 
   }

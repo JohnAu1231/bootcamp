@@ -1,5 +1,7 @@
 package poker;
 
+import java.util.Arrays;
+
 public class Card {
 
   // when no enum, using static final
@@ -36,11 +38,11 @@ public class Card {
     this.suit = suit;
   }
 
-  public void setRank (Rank rank) {
+  public void setRank(Rank rank) {
     this.rank = rank;
   }
 
-  public void setSuit (Suit suit) {
+  public void setSuit(Suit suit) {
     this.suit = suit;
   }
 
@@ -92,8 +94,12 @@ public class Card {
       return 1;
     } else if (this.rank.getRankValue() < card.rank.getRankValue()) {
       return -1;
-    } 
+    }
     return this.suitCompareTo(card);
+  }
+
+  public boolean isGreater(Card targeCard) {
+    return isGreater(this.cards[0], targeCard);
   }
 
 
@@ -114,15 +120,24 @@ public class Card {
     // System.out.println(world.compareTo(hello));
     // System.out.println(Rule.compareTo(world,hello));
     // System.out.println(Rule.compareTo(hello,world));
-    Card[] card1 = new Card[] {new Card(Rank.THIRTEEN, Suit.SPADE),new Card(Rank.TWO, Suit.SPADE), new Card(Rank.TWO, Suit.SPADE), new Card(Rank.TWO, Suit.SPADE),new Card(Rank.ONE, Suit.SPADE)};
-    Card c1 =  new Card(Rank.THIRTEEN, Suit.SPADE);
-    Card c2 =  new Card(Rank.TWLVE, Suit.SPADE);
-    Card c3 =  new Card(Rank.ELEVEN, Suit.SPADE);
-    Card c4 =  new Card(Rank.TEN, Suit.DIAMOND);
-    Card c5 =  new Card(Rank.NINE, Suit.SPADE);
-    Hand myHand = new Hand(new Card(Rank.THIRTEEN, Suit.SPADE),new Card(Rank.TWO, Suit.SPADE), new Card(Rank.TWO, Suit.SPADE), new Card(Rank.TWO, Suit.SPADE),new Card(Rank.TWO, Suit.SPADE));
-    Hand myHand2 = new Hand(new Card(Rank.SIX, Suit.SPADE),new Card(Rank.FIVE, Suit.SPADE), new Card(Rank.FOUR, Suit.SPADE), new Card(Rank.THREE, Suit.SPADE),new Card(Rank.TWO, Suit.SPADE));
-    Hand myHand3 = new Hand(c1,c3,c5,c2,c4);
+    Card[] card1 = new Card[] {new Card(Rank.THIRTEEN, Suit.SPADE),
+        new Card(Rank.TWO, Suit.SPADE), new Card(Rank.TWO, Suit.SPADE),
+        new Card(Rank.TWO, Suit.SPADE), new Card(Rank.ONE, Suit.SPADE)};
+    Card c1 = new Card(Rank.THIRTEEN, Suit.SPADE);
+    Card c2 = new Card(Rank.TWLVE, Suit.SPADE);
+    Card c3 = new Card(Rank.ELEVEN, Suit.SPADE);
+    Card c4 = new Card(Rank.TEN, Suit.DIAMOND);
+    Card c5 = new Card(Rank.NINE, Suit.SPADE);
+    Hand myHand = new Hand(new Card(Rank.THIRTEEN, Suit.SPADE),
+        new Card(Rank.TWO, Suit.SPADE), new Card(Rank.TWO, Suit.SPADE),
+        new Card(Rank.TWO, Suit.SPADE), new Card(Rank.TWO, Suit.SPADE));
+    Hand myHand2 = new Hand(new Card(Rank.SIX, Suit.SPADE),
+        new Card(Rank.FIVE, Suit.SPADE), new Card(Rank.FOUR, Suit.SPADE),
+        new Card(Rank.THREE, Suit.SPADE), new Card(Rank.TWO, Suit.SPADE));
+    Hand myHand3 = new Hand(c1, c3, c5, c2, c4);
+    Hand myHand4 = new Hand(new Card(Rank.SIX, Suit.DIAMOND),
+        new Card(Rank.FIVE, Suit.DIAMOND), new Card(Rank.FOUR, Suit.DIAMOND),
+        new Card(Rank.THREE, Suit.DIAMOND), new Card(Rank.TWO, Suit.DIAMOND));
     System.out.println(myHand.isFourKind());
     System.out.println(myHand.isThreeHouse());
     System.out.println(myHand2.isFlush());
@@ -130,9 +145,14 @@ public class Card {
     System.out.println(myHand3.isStraight());
     System.out.println(myHand2.isStraightFlush());
     System.out.println(myHand3.isStraightFlush());
-    
-    
-  
+    System.out.println("Bigger straight=" + myHand4.isGreaterStraight(myHand2.getCards()));
+
+    HandCard hand1 = new HandCard(card1);
+    hand1.setHandCard(card1);
+    System.out.println(Arrays.toString(hand1.showAllHandCards()));
+
+
+
   }
 
 

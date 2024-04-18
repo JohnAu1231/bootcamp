@@ -27,13 +27,21 @@ public enum Rank {
    public void setValue(int value) {
       this.value = value;
    }
+
    public int getRankValue() {
       return this.value;
    }
 
+   public static boolean isPlayable(Rank rank1, Rank rank2) {
+      return rank1.value > rank2.value;
+
+   }
+
+   public boolean isPlayable(Rank rank) {
+      return this.value > rank.value;
+   }
+
    public static void main(String[] args) {
-      BigDecimal a = BigDecimal.valueOf(5.0d);
-      BigDecimal result = a.multiply(a);
-      System.out.println(result);
+
    }
 }

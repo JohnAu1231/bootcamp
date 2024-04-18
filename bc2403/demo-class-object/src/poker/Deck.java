@@ -58,7 +58,12 @@ public class Deck {
   public static Deck full() {
     return new Deck(false);
   }
+  // public Card[][] getCard() {
+  //   return this.dealCard;
+  // }
 
+
+  
 
   public static void main(String[] args) {
     Card abc = new Card(Rank.ONE, Suit.CLUB);
