@@ -42,5 +42,6 @@ public interface Shape {
     shapes[0] = new Circle();
     shapes[1] = new Square();
     shapes[2] = new Circle();
+    Shape shape = new Shape();
   }
 }

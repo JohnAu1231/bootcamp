@@ -31,7 +31,6 @@ public class Circle implements Shape {
 
   public static void main(String[] args) {
     
-    System.out.println(Circle(2.0));
     Shape s = new Circle(); // OK
     s.area();
     s.print();
