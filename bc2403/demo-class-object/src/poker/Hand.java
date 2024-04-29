@@ -1,5 +1,11 @@
 package poker;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.List;
+import java.util.stream.Collectors;
+
 public class Hand {
 
   private Card[] cards;
@@ -44,6 +50,23 @@ public class Hand {
     if (num < this.cards.length)
       return this.cards[num];
     return null;
+  }
+
+  public Card[] sort() {
+    List<Card> ls = new ArrayList<>();
+    for (Card c : this.cards) {
+      ls.add(c);
+    }
+    Collections.sort(ls, new IncreasingOrder());
+    return (Card[])ls.toArray();
+    // Card[] arr = new Card[ls.size()];
+    // for (int i = 0; i < ls.size(); i++) {
+    //   arr[i] = ls.get(i);
+    // }
+  //   Card[] cards = new Card[ls.size()];
+  //   cards = ls.toArray(cards);
+  //   return cards;
+  // }
   }
 
   public boolean isStraight() {
@@ -294,6 +317,6 @@ public class Hand {
     }
     if(isFourKind(play.getCards()) == true && isFourKind(target.cards) ==false)
       return true;
-
+    return false;
   }
 }

@@ -1,6 +1,9 @@
 package poker;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
 
 public class HandCard {
   
@@ -33,6 +36,15 @@ public class HandCard {
       str[i] = this.handCards[i].toString();
     }
     return str;
+  }
+
+  public Card[] sort() {
+    List<Card>() = new ArrayList<>();
+    for (Card c : this.cards) {
+      ArrayList.add(c);
+    }
+    Collections.sort(c, new IncreasingOrder());
+
   }
 
 

@@ -1,8 +1,13 @@
 package poker;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Random;
 
-public class Card {
+public class Card{
 
   // when no enum, using static final
   // public static final char DIAMOND = 'D';
@@ -97,11 +102,7 @@ public class Card {
     }
     return this.suitCompareTo(card);
   }
-
-  public boolean isGreater(Card targeCard) {
-    return isGreater(this.cards[0], targeCard);
-  }
-
+  
 
   public String toString() {
     return "Card(" //
@@ -150,6 +151,29 @@ public class Card {
     HandCard hand1 = new HandCard(card1);
     hand1.setHandCard(card1);
     System.out.println(Arrays.toString(hand1.showAllHandCards()));
+
+    int random = new Random().nextInt(2);
+    Comparator<Card> formula = null;
+    if (random == 0)
+      formula = new DecreasingOrder();
+    else if (random == 1)
+      formula = new IncreasingOrder();
+    List<Card> ls = new ArrayList<>();
+    ls.add(new Card(Rank.FIVE, Suit.DIAMOND));
+    ls.add(new Card(Rank.FOUR, Suit.DIAMOND));
+    ls.add(new Card(Rank.FOUR, Suit.SPADE));
+    ls.add(new Card(Rank.THREE, Suit.HEART)); 
+    ls.add(new Card(Rank.TWO, Suit.DIAMOND));
+    // Collections.sort(ls, formula);
+    Collections.sort(ls, new IncreasingOrder());
+    System.out.println(random);
+    System.out.println(ls);
+
+    Hand myHand5 = new Hand(new Card(Rank.FOUR, Suit.DIAMOND),
+        new Card(Rank.FIVE, Suit.DIAMOND), new Card(Rank.FOUR, Suit.HEART),
+        new Card(Rank.THREE, Suit.HEART), new Card(Rank.TWO, Suit.DIAMOND));
+    System.out.println(Arrays.toString(myHand5.showAllHandCards()));
+    System.out.println(Arrays.toString(myHand5.sort()));
 
 
 
