@@ -2,8 +2,8 @@ public class Father implements Swim {
   
   @Override 
   public void swim() {
-    System.out.println("I'm swimming");
-    System.out.println("Bye Bye");
+    // System.out.println("I'm swimming");
+    // System.out.println("Bye Bye");
   }
 
   public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class Father implements Swim {
     //After Lambda (after Java 8)
     Swim father2 = () -> {
       System.out.println("I'm swimming");
-      System.out.println("Bye Bye");
+      
     };
 
     Swim mother = () -> {
@@ -24,5 +24,6 @@ public class Father implements Swim {
     };
     father2.swim();
     mother.swim();
+   
   }
 }

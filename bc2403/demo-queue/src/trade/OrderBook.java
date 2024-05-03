@@ -128,10 +128,11 @@ public class OrderBook {
 
   public void checkAllBuy() {
     PriorityQueue<Buy> newQ = new PriorityQueue<Buy>(new BuyOrder());
-    System.out.println("BuyList:");
-    for (int i = 0; i < this.buy.size(); i++) {
+    System.out.println("BuyList:" + this.buy.size());
+    int n = this.buy.size();
+    for (int i = 0; i < n; i++) {
       Buy temp = this.buy.poll();
-      System.out.print("(" + i + ")" + temp.getPrice());
+      System.out.println("(" + (i + 1) + ")" + temp);
       newQ.add(temp);
     }
     this.buy = newQ;
@@ -143,9 +144,10 @@ public class OrderBook {
   public void checkAllSell() {
     PriorityQueue<Sell> newQ = new PriorityQueue<Sell>(new SellOrder());
     System.out.println("SellList");
-    for (int i = 0; i < this.sell.size(); i++) {
+    int n = this.sell.size();
+    for (int i = 0; i < n; i++) {
       Sell temp = this.sell.poll();
-      System.out.print("(" + i + ")" + temp.getPrice());
+      System.out.println("(" + (i + 1) + ")" + temp);
       newQ.add(temp);
     }
     this.sell = newQ;
@@ -159,6 +161,7 @@ public class OrderBook {
     }
     return true;
   }
+
 
 
   // public Boolean canBuy (double price, int quantity) {
@@ -351,12 +354,15 @@ public class OrderBook {
     // ob.addSell(1.8d, 50);
     ob.buy(1.0d, 100);;
     ob.buy(1.2d, 50);
+    ob.checkAllBuy();
     ob.sell(1.5d, 50);
     ob.sell(1.9, 50);
+    ob.checkAllSell();
     ob.buy(1.5d, 70);
     ob.buy(200);
     ob.buy(2.0d, 50);
+    ob.checkAllBuy();
     ob.sell(300);
-
+    
   }
 }

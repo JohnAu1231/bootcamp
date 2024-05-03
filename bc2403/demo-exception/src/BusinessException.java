@@ -10,7 +10,7 @@ public class BusinessException extends Exception {
   public static BusinessException of(Syscode syscode) {
     if (syscode == null)
       throw new IllegalArgumentException();
-      System.out.println("tesy");
+      System.out.println("test");
     return new BusinessException(syscode);
   }
   public static void main(String[] args) throws BusinessException {

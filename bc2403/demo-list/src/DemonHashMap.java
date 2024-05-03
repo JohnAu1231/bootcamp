@@ -9,7 +9,7 @@ public class DemonHashMap {
     // John 13
     // Vincent 18
     HashMap<String, Integer> mapper = new HashMap<>();  //HashMap< key, value>
-
+    
     mapper.put("John", Integer.valueOf(13)); // put an "entry" into map;
     mapper.put("Vincent" , 18);
     // Get value by Key, never get key by value;
@@ -65,6 +65,10 @@ public class DemonHashMap {
         total += map.getValue().get(i).getAmount();
       }
     }
+    System.out.println("------test-------");
+    orderMap.forEach((key, value) -> System.out.println(key + " " + value));
+
+    
     System.out.println(total);
     // values()
     sum = 0;
