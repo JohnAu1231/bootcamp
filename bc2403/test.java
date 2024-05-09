@@ -36,6 +36,10 @@ public static int[] megre(int[] arr1, int[] arr2) {
     int[] arr = new int[] {3,27,38,43,45,48,56,72,88};
     int[] arr2 = new int[] {9,10,45,46,71,73,89,99};
     System.out.println(Arrays.toString(megre(arr, arr2)));
+
+    String str = "";
+    String abc = "abcdefg";
+    System.out.println(str.concat(String.valueOf(abc.charAt(4))));
   }
 
 }
