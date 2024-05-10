@@ -1,0 +1,150 @@
+-- Exercise 3
+CREATE DATABASE Exercise3;
+USE Exercise3;
+DROP DATABASE Exercise3;
+
+CREATE TABLE customer (
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    customer_name VARCHAR(255),
+    city_id INTEGER,
+    customer_address VARCHAR(255),
+    contact_person VARCHAR(255) NOT NULL,
+    email VARCHAR(128),
+    phone VARCHAR(128)
+);
+
+CREATE TABLE product (
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    sku VARCHAR(32),
+    product_name VARCHAR(128),
+    product_description TEXT,
+    current_price DECIMAL(8,2),
+    quantity_in_stock INTEGER
+);
+
+CREATE TABLE invoice (
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    invoice_number VARCHAR(255),
+    customer_id INTEGER,
+    user_account_id INTEGER,
+    total_price DECIMAL(8,2),
+    time_issue VARCHAR(100),
+    time_due VARCHAR(100),
+    time_paid VARCHAR(100),
+    time_canceled VARCHAR(100),
+    time_refunded VARCHAR(100),
+    CONSTRAINT FK_CustomerOrder FOREIGN KEY (customer_id) REFERENCES customer(id)
+);
+
+CREATE TABLE invoice_item (
+	id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    invoice_id INTEGER,
+    product_id INTEGER,
+    quantity INTEGER,
+    price DECIMAL(8,2),
+    line_total_price DECIMAL(8,2),
+    CONSTRAINT FK_InvoiceOrder FOREIGN KEY (invoice_id) REFERENCES invoice(id),
+    CONSTRAINT FK_ProductOrder FOREIGN KEY (product_id) REFERENCES product(id)
+);
+    
+    
+
+-- Sample Data
+DELETE FROM CUSTOMER;
+INSERT INTO CUSTOMER VALUES
+(1, 'Drogerie Wien', 1, 'Deckergasse 15A', 'Emil Steinbach', 'abc@gmail.com', 123455678);
+INSERT INTO CUSTOMER VALUES
+(2, 'John', 4, 'Deckergasse 1A', '9upper', 'abck@gmail.com', 12345567);
+INSERT INTO CUSTOMER VALUES
+(3, 'Mary', 8, 'Deckergasse 18A', '9upper', 'abcd@gmail.com', 1234556789);
+
+DELETE FROM PRODUCT;
+INSERT INTO PRODUCT VALUES
+(1, '330120', '9UP PRODUCT', 'COMPLETELY 9UP', 60, 122);
+INSERT INTO PRODUCT VALUES
+(2, '330121', '9UPPER PRODUCT', 'COMPLETELY 9UPPER', 50, 50);
+INSERT INTO PRODUCT VALUES
+(3, '330122', '9UPPER PRODUCTS', 'SUPER 9UPPER', 40, 600);
+INSERT INTO PRODUCT VALUES
+(4, '330123', '9UPPER PRODUCTSS', 'SUPER COMPLETELY 9UPPER', 30, 500);
+
+DELETE FROM INVOICE;
+INSERT INTO INVOICE VALUES
+(1, 123456780, 2, 41, 1423, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO INVOICE VALUES
+(2, 123456780, 3, 42, 1400, NULL, NULL, NULL, NULL, NULL);
+INSERT INTO INVOICE VALUES
+(3, 123456780, 2, 43, 17000, NULL, NULL, NULL, NULL, NULL);
+
+DELETE FROM INVOICE_ITEM;
+INSERT INTO INVOICE_ITEM VALUES
+(1, 1, 1, 40, 23, 920);
+INSERT INTO INVOICE_ITEM VALUES
+(2, 1, 2, 4, 20, 80);
+INSERT INTO INVOICE_ITEM VALUES
+(3, 1, 3, 4, 10, 40);
+INSERT INTO INVOICE_ITEM VALUES
+(4, 1, 2, 4, 30, 120);
+
+SELECT * FROM customer;
+SELECT * FROM invoice;
+SELECT * FROM product;
+SELECT * FROM invoice_item;
+
+-- Question 1c
+SELECT 'customer' AS customer, c.id AS customer_id, c.customer_name
+FROM customer c 
+WHERE c.id NOT IN (SELECT i.customer_id FROM invoice i);
+
+SELECT 'product' AS product, p.id AS product_id , p.product_name
+FROM product p
+WHERE p.id NOT IN (SELECT it.product_id FROM invoice_item it);
+
+
+-- Question 2
+-- 2a
+WITH sum AS(
+	SELECT DEPT_ID, COUNT(1) AS NUMBER_OF_EMPLOYEES
+    FROM EMPLOYEE e
+    GROUP BY DEPT_ID
+)
+SELECT d.DEPT_CODE AS Department_Code, COALESCE(NUMBER_OF_EMPLOYEES,0)
+FROM DEPARTMENT  d
+LEFT JOIN sum s ON s.DEPT_ID = d.id
+ORDER BY NUMBER_OF_EMPLOYEES DESC;
+
+-- QUESTION 2b
+DELETE FROM DEPARTMENT WHERE ID =5;
+INSERT INTO DEPARTMENT VALUES (5, 'IT', 'INFORMATION TECHNOLOGY DEPARTMENT');
+-- YES, because 'IT' have two different id in 'department id', and the selecting is comparing by the 'department id'.
+
+-- Question 2a sample data
+CREATE TABLE EMPLOYEE (
+ ID INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+ EMPLOYEE_NAME VARCHAR(30) NOT NULL,
+ SALARY NUMERIC(8,2),
+ PHONE NUMERIC(15),
+ EMAIL VARCHAR(50),
+ DEPT_ID INTEGER NOT NULL
+);
+CREATE TABLE DEPARTMENT (
+	ID INTEGER NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    DEPT_CODE VARCHAR(3) NOT NULL,
+    DEPT_NAME VARCHAR(200) NOT NULL
+);
+
+DELETE FROM DEPARTMENT;
+DELETE FROM EMPLOYEE;
+
+INSERT INTO EMPLOYEE VALUES 
+(1, 'JOHN', 20000, 90234567, 'JOHN@GAMIL.COM', 1),
+(2, 'MARY', 10000, 90234561, 'MARY@GAMIL.COM', 1),
+(3, 'STEVE', 30000, 90234562, 'STEVE@GAMIL.COM', 3),
+(4, 'SUNNY', 40000, 90234563, 'SUNNY@GAMIL.COM', 4);
+
+INSERT INTO DEPARTMENT VALUES 
+(1, 'HR', 'HUMAN RESOURCES'),
+(2, '9UP', '9UP DEPARTMENT'),
+(3, 'SA', 'SALES DEPARTMNET'),
+(4, 'IT', 'INFORMATION RECHNOLOGY DEPARTMENT');
+
