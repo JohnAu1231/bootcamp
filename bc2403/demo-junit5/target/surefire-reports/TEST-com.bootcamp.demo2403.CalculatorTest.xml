@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="com.bootcamp.demo2403.CalculatorTest" time="0.055" tests="7" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="java.specification.version" value="17"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+    <property name="sun.jnu.encoding" value="MS950"/>
+    <property name="java.class.path" value="C:\Users\github\bootcamp\bc2403\demo-junit5\target\test-classes;C:\Users\github\bootcamp\bc2403\demo-junit5\target\classes;C:\Users\john0\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\john0\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\john0\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\john0\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\john0\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\john0\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\john0\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar;C:\Users\john0\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.0\junit-jupiter-params-5.10.0.jar;"/>
+    <property name="java.vm.vendor" value="Azul Systems, Inc."/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="user.variant" value=""/>
+    <property name="java.vendor.url" value="http://www.azul.com/"/>
+    <property name="user.timezone" value="Asia/Hong_Kong"/>
+    <property name="os.name" value="Windows 11"/>
+    <property name="java.vm.specification.version" value="17"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="HK"/>
+    <property name="sun.boot.library.path" value="C:\Softwares\zulu17.48.15-ca-jdk17.0.10-win_x64\bin"/>
+    <property name="sun.java.command" value="C:\Users\john0\AppData\Local\Temp\surefire9413637063356914534\surefirebooter14936350953677980534.jar C:\Users\john0\AppData\Local\Temp\surefire9413637063356914534 2024-05-14T15-40-59_004-jvmRun1 surefire11704694887663561059tmp surefire_014677902355892697522tmp"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="surefire.test.class.path" value="C:\Users\github\bootcamp\bc2403\demo-junit5\target\test-classes;C:\Users\github\bootcamp\bc2403\demo-junit5\target\classes;C:\Users\john0\.m2\repository\org\junit\jupiter\junit-jupiter-engine\5.10.2\junit-jupiter-engine-5.10.2.jar;C:\Users\john0\.m2\repository\org\junit\platform\junit-platform-engine\1.10.2\junit-platform-engine-1.10.2.jar;C:\Users\john0\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\john0\.m2\repository\org\junit\platform\junit-platform-commons\1.10.2\junit-platform-commons-1.10.2.jar;C:\Users\john0\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.10.2\junit-jupiter-api-5.10.2.jar;C:\Users\john0\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\john0\.m2\repository\org\projectlombok\lombok\1.18.32\lombok-1.18.32.jar;C:\Users\john0\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.10.0\junit-jupiter-params-5.10.0.jar;"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="C:\Users\john0"/>
+    <property name="user.language" value="zh"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2024-01-16"/>
+    <property name="java.home" value="C:\Softwares\zulu17.48.15-ca-jdk17.0.10-win_x64"/>
+    <property name="file.separator" value="\"/>
+    <property name="basedir" value="C:\Users\github\bootcamp\bc2403\demo-junit5"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="surefire.real.class.path" value="C:\Users\john0\AppData\Local\Temp\surefire9413637063356914534\surefirebooter14936350953677980534.jar"/>
+    <property name="user.script" value=""/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="java.runtime.version" value="17.0.10+7-LTS"/>
+    <property name="user.name" value="john0"/>
+    <property name="path.separator" value=";"/>
+    <property name="os.version" value="10.0"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="file.encoding" value="MS950"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="Zulu17.48+15-CA"/>
+    <property name="localRepository" value="C:\Users\john0\.m2\repository"/>
+    <property name="java.vendor.url.bug" value="http://www.azul.com/support/"/>
+    <property name="java.io.tmpdir" value="C:\Users\john0\AppData\Local\Temp\"/>
+    <property name="java.version" value="17.0.10"/>
+    <property name="user.dir" value="C:\Users\github\bootcamp\bc2403\demo-junit5"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="native.encoding" value="MS950"/>
+    <property name="java.library.path" value="C:\Softwares\zulu17.48.15-ca-jdk17.0.10-win_x64\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\Users\john0\bin;C:\Softwares\Git\mingw64\bin;C:\Softwares\Git\usr\local\bin;C:\Softwares\Git\usr\bin;C:\Softwares\Git\usr\bin;C:\Softwares\Git\mingw64\bin;C:\Softwares\Git\usr\bin;C:\Users\john0\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0;C:\Windows\System32\OpenSSH;C:\Program Files\dotnet;C:\Softwares\zulu17.48.15-ca-jdk17.0.10-win_x64\bin;C:\Softwares\apache-maven-3.9.6\bin;C:\Users\john0\AppData\Local\Programs\Microsoft VS Code\bin;C:\Softwares\Git\cmd;C:\Program Files\MySQL\MySQL Shell 8.0\bin;C:\Users\john0\AppData\Local\Microsoft\WindowsApps;C:\Users\john0\AppData\Local\Programs\Microsoft VS Code\bin;C:\Softwares\Git\usr\bin\vendor_perl;C:\Softwares\Git\usr\bin\core_perl;."/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.vendor" value="Azul Systems, Inc."/>
+    <property name="java.vm.version" value="17.0.10+7-LTS"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="java.class.version" value="61.0"/>
+  </properties>
+  <testcase name="testSum" classname="com.bootcamp.demo2403.CalculatorTest" time="0"/>
+  <testcase name="testSort" classname="com.bootcamp.demo2403.CalculatorTest" time="0"/>
+  <testcase name="testIsPalindrome" classname="com.bootcamp.demo2403.CalculatorTest" time="0.002"/>
+  <testcase name="testIsPalindrome[1]" classname="com.bootcamp.demo2403.CalculatorTest" time="0.002"/>
+  <testcase name="testIsPalindrome[2]" classname="com.bootcamp.demo2403.CalculatorTest" time="0.001"/>
+  <testcase name="testConcat" classname="com.bootcamp.demo2403.CalculatorTest" time="0"/>
+  <testcase name="testSubtractrue" classname="com.bootcamp.demo2403.CalculatorTest" time="0"/>
+</testsuite>
