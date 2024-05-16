@@ -1,6 +1,7 @@
 package com.bootcamp.demo2403;
 
 import static org.junit.jupiter.api.Assertions.*;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import org.junit.jupiter.api.Assertions;
@@ -43,4 +44,13 @@ public class CalculatorTest {
         Calculator.sort(arr);
         Assertions.assertArrayEquals(new int[] {1,2,3,4}, arr) ;
     }
+
+    // @Test
+    // void testTimeOut() {
+    //     assertTimeout(Duration.ofMillis(500), () -> {
+    //         for (int i = 0; i < 1000000; i++) {
+    //             System.out.println("hello");
+    //         }
+    //     });
+
 }

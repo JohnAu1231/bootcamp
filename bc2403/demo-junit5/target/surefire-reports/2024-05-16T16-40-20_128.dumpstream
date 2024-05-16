@@ -1,0 +1,12 @@
+# Created at 2024-05-16T16:40:20.799
+5月 16, 2024 4:40:20 下午 org.junit.jupiter.engine.discovery.MethodSelectorResolver resolve
+
+# Created at 2024-05-16T16:40:20.799
+警告: Possible configuration error: method [void com.bootcamp.demo2403.CalculatorTest.testSum()] resulted in multiple TestDescriptors [org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor, org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor]. This is typically the result of annotating a method with multiple competing annotations such as @Test, @RepeatedTest, @ParameterizedTest, @TestFactory, etc.
+
+# Created at 2024-05-16T16:40:20.846
+5月 16, 2024 4:40:20 下午 org.junit.jupiter.engine.discovery.MethodSelectorResolver resolve
+
+# Created at 2024-05-16T16:40:20.846
+警告: Possible configuration error: method [void com.bootcamp.demo2403.CalculatorTest.testSum()] resulted in multiple TestDescriptors [org.junit.jupiter.engine.descriptor.TestMethodTestDescriptor, org.junit.jupiter.engine.descriptor.TestTemplateTestDescriptor]. This is typically the result of annotating a method with multiple competing annotations such as @Test, @RepeatedTest, @ParameterizedTest, @TestFactory, etc.
+
